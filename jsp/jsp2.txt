@@ -1,0 +1,113 @@
+errorPage:- To define error page
+isErrorPage:- Make current page as a error page.
+
+A.jsp
+====
+<%@page errorPage="err.jsp"%>
+<%
+int a =10/0;
+%>
+
+err.jsp
+======
+<%@page isErrorPage="true" %>
+<%= exception %>
+
+
+Note :- We can use exception implicit object only on jsp page where isErrorPage is  set to true.
+
+==============================================================
+isThreadSafe:-
+===========
+ By defalut Servlet and jsp are multithreaded when we set isThreadSafe to true then JSP page is Single Threaded.
+
+<%@page isThreadSafe="false" %>
+
+isELIgnored:-
+==========
+by default JSP support expression language when we set isELIgnored then JSP page does not support expression langauge.
+<%@page isELIgnored="true" %>
+
+language:-
+=======
+To set language of JSP page.
+by defalut lanaguga is JAva
+<%@page language="java" %>
+
+
+contentType:= To set response header.
+=====
+<%@page contentType="text/html" %>
+
+
+pageEncoding: To set page encoding format.
+=====
+<%@page pageEncoding="UTF-8" %>
+
+buffer:-  to change buffer capacity of JSP page. By default buffer capacity is 8kb. 
+=====
+
+<%@page buffer="64kb" %>
+
+================================================================================================
+include directive:- To include any resource in jsp page resource may be html file, text file, jsp file.....etc.
+
+
+head.html
+=======
+<body>
+<a href="home.jsp">Home</a>
+<a href="about.jsp">AboutUs</a>
+<a href="cont.jsp">ContactUs</a>
+<a href="gall.jsp">Gallary</a>
+</body>
+Foot.html
+=======
+<body>
+<p align="center">copyright@abc.com</p>
+</body
+
+Home.jsp
+=======
+<body>
+<%@include file="Head.html"%>
+other conent Here
+<%@include file="Foot.html" %>
+</body>
+
+==============================================================
+taglib Directive:- It is used to Add JSTL tag library file in JSP page.
+=============================================
+<%@taglib uri="url" prefix="c" %>
+=============================================================
+Exception Handling in JSP
+=================
+There are two ways to handle exception in JSp 
+1) by errorPage and isErrorPage attribute
+2) by using web.xml file
+
+=========
+By using web.xml
+=============
+
+<web-app>    
+ <error-page>  
+  <exception-type>java.lang.Exception</exception-type>  
+  <location>/err.jsp</location>  
+  </error-page>  
+   
+</web-app>  
+
+
+2nd
+===
+<web-app>  
+  
+ <error-page>  
+  <error-code>404</error-code>  
+  <location>/err.jsp</location>  
+  </error-page>  
+   
+</web-app>  
+
+

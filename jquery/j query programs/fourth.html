@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+     <html>
+	       <head>
+		        <title>focus  event in jQuery </title>
+		        <script src="jq.js"></script>
+				
+				<script>
+				    $(document).ready(function(){
+					    $("input").focus(function(){
+						     $(this).css("color","gray");
+							 $(this).css("background-color","black");
+							 $(this).css("font-size","19px");
+						});
+					    
+				
+				
+					$("input").blur(function(){
+					     $(this).css("color","blue");
+						 $(this).css("background-color","yellow");
+						 $(this).css("font-size","15px");
+					});
+					});
+				</script>
+		   </head>
+		   
+		   <body>
+		        Name:<input type="text" name="t1"><br>
+				email:<input type="email" name="t1"><br>
+				passcode:<input type="password" name="t1">
+		   </body>
+	 </html>

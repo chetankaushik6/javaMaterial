@@ -1,0 +1,292 @@
+ Login.html
+========
+
+<body>
+<form action="Login" method="post">
+<fieldset>
+<legend align="left">RegForm</legend>
+<table>
+<tr><td>Email</td>
+<td><input type="text" placeholder="Enter Name Here" required="required" name="E1"></td></tr>
+
+<tr><td>Password</td>
+<td><input type="password"  placeholder="Enter password Here" required="required" name="P1" ></td></tr>
+
+<tr>
+<td><input type="submit"  value="SignIn"></td>
+</table>
+</fieldset>
+<form>
+=====================
+
+
+Login.java
+========
+import javax.servlet.http.*;
+import javax.servlet.*;
+import java.io.*;
+import java.sql.*;
+public class Login extends HttpServlet
+{
+public void doPost(HttpServletRequest req,HttpServletResponse res)
+{
+try
+{
+res.setContentType("text/html");
+String a=req.getParameter("E1");
+String b=req.getParameter("P1");
+PrintWriter pw=res.getWriter();
+
+Class.forName("com.mysql.jdbc.Driver");
+
+Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/orga","root","");
+
+PreparedStatement pst=con.prepareStatement("select * from applicant where email=? and pwd=?");
+pst.setString(1,a);
+pst.setString(2,b);
+
+ResultSet rs=pst.executeQuery();
+
+if(rs.next())
+{
+res.sendRedirect("AfterLogin.html");
+}
+else
+{
+RequestDispatcher rd = req.getRequestDispatcher("Login.html");
+pw.print("Email or password is incorrect ");
+rd.include(req,res);
+}
+}
+catch(Exception ett)
+{
+try
+{
+PrintWriter out=res.getWriter();
+
+out.print(ett);
+}
+catch(Exception et)
+{
+
+}
+}
+}
+}
+===========================================
+Search.html
+==========	
+<body>
+<form action="Search" method="post">
+<fieldset>
+<legend align="left">RegForm</legend>
+<table>
+<tr><td>Email</td>
+<td><input type="text" placeholder="Enter Name Here" required="required" name="E1"></td></tr>
+
+<tr>
+<td><input type="submit"  value="Search"></td>
+</table>
+</fieldset>
+</form>
+====
+Search.java
+============
+import javax.servlet.http.*;
+import javax.servlet.*;
+import java.io.*;
+import java.sql.*;
+public class Search extends HttpServlet
+{
+public void doPost(HttpServletRequest req,HttpServletResponse res)
+{
+try
+{
+res.setContentType("text/html");
+String a=req.getParameter("E1");
+
+PrintWriter pw=res.getWriter();
+
+Class.forName("com.mysql.jdbc.Driver");
+
+Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/orga","root","");
+
+PreparedStatement pst=con.prepareStatement("select * from applicant where email=?");
+pst.setString(1,a);
+
+ResultSet rs=pst.executeQuery();
+
+if(rs.next())
+{
+pw.print("name is "+rs.getString(1)+"<br>");
+pw.print("Email is "+rs.getString(3)+"<br>");
+pw.print("Gender "+rs.getString(4)+"<br>");
+pw.print("City is "+rs.getString(7)+"<br>");
+}
+else
+ {
+RequestDispatcher rd = req.getRequestDispatcher("Search.html");
+pw.print("Incorrect Email ..........");
+rd.include(req,res);
+}
+}
+catch(Exception ett)
+{
+try
+{
+PrintWriter out=res.getWriter();
+
+out.print(ett);
+}
+catch(Exception et)
+{
+
+}
+}
+}
+}
+=====================================
+Show.html
+==========	
+<body>
+<form action="Show" method="post">
+<fieldset>
+<legend align="left">RegForm</legend>
+<table>
+<tr>
+<td><input type="submit"  value="ShowAll"></td>
+</table>
+</fieldset>
+</form>
+====
+Show.java
+============
+import javax.servlet.http.*;
+import javax.servlet.*;
+import java.io.*;
+import java.sql.*;
+public class Show extends HttpServlet
+{
+public void doPost(HttpServletRequest req,HttpServletResponse res)
+{
+try
+{
+res.setContentType("text/html");
+
+PrintWriter pw=res.getWriter();
+
+Class.forName("com.mysql.jdbc.Driver");
+
+Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/orga","root","");
+
+PreparedStatement pst=con.prepareStatement("select * from applicant");
+
+
+ResultSet rs=pst.executeQuery();
+pw.print("<table border='1'>");
+pw.print("<tr><td>Name</td><td>Email</td><td>Gender</td><td>City</td></tr>");
+while(rs.next())
+{
+pw.print("<tr>");
+pw.print("<td>"+rs.getString(1)+"</td>");
+pw.print("<td>"+rs.getString(3)+"</td>");
+pw.print("<td>"+rs.getString(4)+"</td>");
+pw.print("<td>"+rs.getString(7)+"</td>");
+pw.print("</tr>");
+}
+
+}
+catch(Exception ett)
+{
+try
+{
+PrintWriter out=res.getWriter();
+
+out.print(ett);
+}
+catch(Exception et)
+{
+
+}
+}
+}
+}
+=====================================
+
+del.html
+==========	
+<body>
+<form action="Delete" method="post">
+<fieldset>
+<legend align="left">RegForm</legend>
+<table>
+<tr><td>Email</td>
+<td><input type="text" placeholder="Enter Name Here" required="required" name="E1"></td></tr>
+
+<tr>
+<td><input type="submit"  value="Search"></td>
+</table>
+</fieldset>
+<form>
+====
+Delete.java
+============
+import javax.servlet.http.*;
+import javax.servlet.*;
+import java.io.*;
+import java.sql.*;
+public class Delete extends HttpServlet
+{
+public void doPost(HttpServletRequest req,HttpServletResponse res)
+{
+try
+{
+res.setContentType("text/html");
+String a=req.getParameter("E1");
+
+PrintWriter pw=res.getWriter();
+
+Class.forName("com.mysql.jdbc.Driver");
+
+Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/orga","root","");
+
+PreparedStatement pst=con.prepareStatement("delete from applicant where email=?");
+pst.setString(1,a);
+
+int u=pst.executeUpdate();
+
+if(u>0)
+{
+pw.print("data deleted");
+}
+else
+ {
+RequestDispatcher rd = req.getRequestDispatcher("del.html");
+pw.print("Incorrect Email ..........");
+rd.include(req,res);
+}
+}
+catch(Exception ett)
+{
+try
+{
+PrintWriter out=res.getWriter();
+
+out.print(ett);
+}
+catch(Exception et)
+{
+
+}
+}
+}
+}
+
+
+
+int executeUpdate() :- to execute insert,delete,update command.it returns number of affected rows.
+
+ResultSet executeQuery():- For select query. it returns an object of ResulSet.
+
+boolean execute() :- FOR DDL command.
+

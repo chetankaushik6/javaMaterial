@@ -1,0 +1,205 @@
+ec3Property in CSS
+===============
+Border Property
+==============
+border-width   :- thin,thick,medium, in px
+border-style   :- dotted, solid, dashed, inset,outset,ridge,grove
+border-color   :- Any color
+border
+border-radius  :- in pX   // in css3
+border-image     in css3
+ex
+===
+h1
+{
+border-width:2px;
+border-style:solid;
+border-color:red;
+border-radius:20px;
+}
+or
+h1
+{
+border:2px solid red;
+border-radius:20px;
+}
+
+============================
+border-top-width
+border-top-style
+border-top-color
+
+border-top:2px solid red;
+
+border-left-width
+border-left-style
+border-left-color
+border-left
+
+border-right-width
+border-right-style
+border-right-color
+border-right
+
+border-bottom-width
+border-bottom-style
+border-bottom-color
+border-bottom
+
+outline border property in CSS
+==========================
+outline-width
+outline-style
+outline-color
+outline-offset
+outline
+ex:-
+===
+h1
+{
+border:2px solid red;
+border-radius:20px;
+outline-width:1px;
+outline-style:dotted;
+outline-color:blue;
+outline-offset:2px; // distance b/w borders
+}
+
+or
+h1
+{
+outline:2px solid green;
+border:2px solid red;
+outline-offset:3px;
+}
+Font property
+=============
+font-size
+font-style
+font-weight
+font-family
+font-variant
+font
+Note
+====
+16px = 12pt = 1em = 100% 
+
+p
+{
+font-size:18px;
+font-style:italic;
+font-weight:bold;
+font-family:"monotype corsiva";
+font-variant:small-caps;
+}
+==============================
+Text Property 
+=============
+text-align    : left, right, center, justify
+text-indent  : in px
+text-decoration:  overline,underline, none, line-through
+text-transform:- uppercase, lowercase, capitalize
+letter-spacing  :- in px
+word-spacing   : in px
+
+Example:-
+
+p
+{
+text-align:center;
+text-indent:300px;
+text-decoration:overline;
+text-transform:uppercase;
+letter-spacing:5px;
+word-spacing:4px;
+}
+
+Padding Property
+=================
+padding-left
+padding-right
+padding-bottom
+padding-top
+padding
+
+h1
+{
+color:red;
+background-color:yellow;
+padding:50px;
+}
+
+margin Property
+=================
+margin-left
+margin-right
+margin-bottom
+margin-right
+margin
+
+h1
+{
+margin:40px;
+color:red;
+background-color:yellow;
+margin:20px;
+}
+
+======================
+background property in CSS
+=========================
+color
+background-color
+background-image
+background-repeat
+background-position
+background-attachment
+background-size   // in css3
+background-clip   // in css
+background-origin  // in css
+=================================================================
+example
+==========
+body
+{
+color:green;
+background-color:pink;
+background-image:url(a.png);
+background-repeat:no-repeat;
+background-position:100px 20px;
+background-attachment:fixed;
+}
+========================================
+List property in CSS
+===================
+list-style-type
+list-style-image
+
+li
+{
+list-style-type:none;
+list-style-image:url("a.png");
+}
+
+
+opacity:- it is used to change the tranparency of object. its value lie b/w 0 to 1.
+
+<head>
+<style>
+img
+{
+opacity:0.6;
+}
+img:hover
+{
+opacity:1.0;
+}
+</style>
+</head>
+
+<body>
+<img src="bg.png" height="300" width="300">
+</body>
+
+
+

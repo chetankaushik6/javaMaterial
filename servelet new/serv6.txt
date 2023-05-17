@@ -1,0 +1,200 @@
+ServletResponse 
+=================
+
+setContentType():-
+==================
+it is used to set the response header.
+
+res.setContentType("text/html");
+
+getWriter():- it return the object of PrintWriter class.
+=============
+PrintWriter pw=res.getWriter();
+
+sendRedirect():- it is used to redirect request to another resource.
+===============  or another websiter.
+sendError():- To send Error to client.
+res.sendError(420,"loginRequired");
+
+res.sendRedirect("Wel.html");
+res.sendRedirect("http://www.google.com");
+
+setIntHeader():-
+=================
+it is used to set set refresh header.
+
+res.setIntHeader("Refresh",5);
+
+addCookie():-
+===========
+it is used to add cookie with response.
+
+
+ServletRequest:-
+=================
+An object of ServletRequest is used to get requested data inside the servlet.
+
+Method of ServletRequest Interface
+==================================
+1) String getParameter()
+2) String [] getParameterValues()
+3) Enumeration getParameterNames()
+4) String getServerName()
+5) String getLocalName()
+6) int getLocalPort()
+7) int getServerPort()
+8) String getContentType()
+9) String getContextPath()
+10) long getContentLength()
+11) RequestDispatcher getRequestDispatcher()
+12) Cookie [] getCookies()
+
+======================================================
+Example of ServletRequest
+=========================
+import static java.awt.Color.red;
+import javax.servlet.http.*;
+import javax.servlet.*;
+import java.io.*;
+public class Reg extends HttpServlet{
+    public void doPost(HttpServletRequest req, HttpServletResponse res){
+        try
+        {
+            res.setContentType("text/html");
+            String a =req.getParameter("n1");
+            PrintWriter pw =res.getWriter();
+            pw.print("Name is "+a);
+            String s=req.getServerName();
+            pw.print("<br>Server Name is "+s);
+            String lt=req.getLocalName();
+            pw.print("<br>Local Name is "+lt);
+            int sp=req.getServerPort();
+            pw.print("<br>Server Port is "+sp);
+            int lp=req.getLocalPort();
+            pw.print("<br>Local Port is "+lp);
+            String ct=req.getContextPath();
+            pw.print("<br>Path  is "+ct);
+            
+            
+            
+        }
+        catch(Exception et)
+                {
+                    
+        }
+            
+    }
+}
+
+
+Example 2:
+===========
+import static java.awt.Color.red;
+import javax.servlet.http.*;
+import javax.servlet.*;
+import java.io.*;
+public class Reg extends HttpServlet{
+    public void doPost(HttpServletRequest req, HttpServletResponse res){
+        try
+        {
+            res.setContentType("text/html");
+            String []a =req.getParameterValues("c1");
+            PrintWriter pw =res.getWriter();
+            pw.print("values are <br>");
+            for(int i=0;i<a.length;i++)
+            pw.print(a[i]);
+            
+            
+            
+        }
+        catch(Exception et)
+                {
+                    
+        }
+            
+    }
+}
+==================================================================
+JDBC API(Java Database connectivity)
+=====================================
+JDBC API contain predefine classes or interface using them a Java Programmer can connect their java Application to any RDBMS.
+JDBC API  is an application or RDBMS independent.
+java.sql package contain classes for JDBC API.
+Classes for JDBC API
+====================
+Driver
+DriverManager
+--
+Interface of JDBC API
+=====================
+1) Connection
+2) PreparedStatement
+3) Statement
+4) CallableStatement
+5) ResultSet
+==========================================================
+
+Steps to Connect Java Application to RDBMS
+=============================================
+1) Register Driver
+2) Create connection
+3) Create Query
+4) Extract Result
+5) close conennection
+====================================
+Register Driver
+=================
+java.lang package contain  a class whose name is "Class".
+forName() method of "Class" class is used to register driver.
+
+EXample to Connect Mysql Driver
+=========
+Class.forName("com.mysql.jdbc.Driver");
+
+EXample to Connect Oracle Driver
+=========
+Class.forName("oracle.jdbc.driver.OracleDriver");
+
+EXample to Connect MSACCESS
+==========================
+Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+==========================================================
+Create Connection
+==================
+getConnection() method of DriverManager class return the object Connection interface
+Example
+======
+Connection con=Driver<Manager.getConnection("jdbc:mysql://localhost:3306/databasename","username","password");
+
+Create Query
+===================
+Example
+PreparedStatement pst =con.prepareStatement("query");
+
+Close Connection
+=================
+con.close()
+====================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

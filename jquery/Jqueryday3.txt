@@ -1,0 +1,324 @@
+removing Function in JQuery
+=====================
+empty():- To remove child
+remove():- To remove  parent
+=====================
+Example:
+======
+<head>
+<script src="jq.js">
+</script>
+<script>
+$(document).ready(function()
+{
+$("#b1").click(function()
+{
+$("div").empty();
+});
+$("#b2").click(function()
+{
+$("div").remove();
+});
+});
+</script>
+
+</head>
+<body>
+<div style="height:200px;width:200px;background-color:pink;">
+<h1>DPS</h1>
+<p style="color:yellow;background-color:black;"> This is a  this is a This is a  this is a This is a  this is a This is a  this is a This is a  this is a This is a  this is a This is a= 
+</p>
+</div>
+<input type="button" id="b1" value="Empty">
+<input type="button" id="b2" value="Remove">
+
+=============================
+Dimension function in JQuery
+=====================
+width()
+height()
+innerWidth()
+innerHeight()
+outerWidth()
+outerHeight()
+
+<head>
+<script src="jq.js">
+</script>
+<script>
+$(document).ready(function()
+{
+$("#b1").click(function()
+{
+var a=$("div").height();
+var b=$("div").innerHeight();
+var c=$("div").outerHeight();
+alert("Height is "+a);
+alert("Inner Height is "+b);
+alert("OuterHeight is "+c);
+});
+$("#b2").click(function()
+{
+$("div").remove();
+});
+});
+</script>
+
+</head>
+<body>
+<div style="padding:10px;border:2px solid red;height:200px;width:200px;background-color:pink;">
+<h1>DPS</h1>
+<p style="color:yellow;background-color:black;"> This is a  this is a This is a  this is a This is a  this is a This is a  this is a This is a  this is a This is a  this is a This is a= 
+</p>
+</div>
+<input type="button" id="b1" value="Show">
+
+========================================
+jQuery animate()
+=====================
+The jQuery animate() method provides you a way to create custom animations.
+Syntax:
+$(selector).animate({params}, speed, callback);  
+======================================
+Example 
+=======
+<!DOCTYPE html>  
+<html>  
+<head>  
+<script src="jq.js"></script>  
+<script>   
+$(document).ready(function(){  
+    $("button").click(function(){  
+        $("div").animate({  
+            left: '250px',  
+            opacity: '0.5',  
+            height: '150px',  
+            width: '150px'  
+        });  
+    });  
+});  
+</script>   
+</head>  
+<body>  
+<button>Start Animation</button>  
+<div style="background:#125f21;height:100px;width:100px;position:absolute;"></div>  
+</body>  
+</html>  
+==================================
+CSS function in JQuery
+====================
+Jquery support Follwing function for css
+1) css()
+2) addClass()
+3) removeClass()
+4) toggleClass
+
+CSS Function in JQuery
+css():- To apply CSS Property
+Example
+$(“p”).css(“color”,”red”);
+	
+addClass():- To apply CSS class at runtime.
+$(“p”).addClass(“a”);
+
+
+removeClass():-
+To apply CSS class at runtime.
+$(“p”).removeClass(“a”);
+
+
+toggleClass():- To do alternate work.
+$(“p”).toggleClass(“a”);
+
+Appending Functon in JQuery
+=======================
+append()
+prepend()
+after()
+before()
+Example
+=======
+<head>
+<script src="jq.js">
+</script>
+<script>
+$(document).ready(function()
+{
+$("#b1").click(function()
+{
+$("p").before("<img src='a.jpg' height='40' width='40'>");
+});
+});
+</script>
+
+</head>
+<body>
+<P> This is a para here </p>
+ <input type="button" value="Add" id="b1"><br>
+==========================================
+
+getter / setter function in jquery
+==========================
+text():- get/set the content of any tag where html tag consider as a text
+
+html():- get/set the content of any tag where html tag consider as a tag
+
+val():- get/set the value of form fields
+attr():- get/set the value of attribute 
+removeAttr() :- remove the attribute.
+
+<head>
+<script src="jq.js">
+</script>
+<script>
+$(document).ready(function()
+{
+$("#b1").click(function()
+{
+$("p").html("Hello world here ....... <b>This is a</b>");
+});
+});
+</script>
+
+</head>
+<body>
+<P> This is a para here </p>
+ <input type="button" value="Add" id="b1"><br>
+
+attr():- get/set the value of attribute
+================
+$("img").attr("src","b.jpg");
+
+removeAttr():- To remove attribute
+================
+$("img").removeAttr("src");
+
+val():- get/set the value of form field
+============================
+$("t1").val("Micky Mouse");
+======================================
+
+
+CSS function in jQuery
+=================
+css()
+addclass()
+removeClass()
+toggleClass()
+=================
+Empty function
+============
+1) empty()
+2) remove()
+
+===================
+Dimension function in jQuery
+=======================
+innerHeight()
+innerWidth()
+outerHeight()
+outerWidth()
+height()
+width()
+============================================
+
+
+Traversal  in JQuery to
+===============
+•	parent()
+•	parents()
+•	parentsUntil()
+
+
+Example
+========
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.a * { 
+display: block;
+border: 2px solid lightgrey;
+color: lightgrey;
+padding: 5px;
+margin: 15px;
+}
+</style>
+<script src="jq.js"></script>
+<script>
+$(document).ready(function(){
+    $("span").parentUntil("ul").css({"color": "red", "border": "2px solid red"});
+});
+</script>
+</head>
+
+<body class="a">body (great-great-grandparent)
+<div style="width:500px;">div (great-grandparent)
+<ul>ul (grandparent)  
+<li>li (direct parent)
+<span>span</span>
+</li>
+</ul>
+</div>
+</body>
+
+
+</html>
+
+
+
+Traversing Down the DOM Tree
+Two useful jQuery methods for traversing down the DOM tree are:
+•	children()
+•	find()
+===============
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.descendants * { 
+display: block;
+border: 2px solid lightgrey;
+color: lightgrey;
+padding: 5px;
+margin: 15px;
+}
+</style>
+<script src="jq.js"></script>
+<script>
+$(document).ready(function(){
+    	$("div").children("p:first").css({"color": "red", "border": "2px solid red"});
+});
+</script>
+</head>
+<body>
+
+<div class="descendants" style="width:500px;">div (current element) 
+<p>p (child)
+<span>span (grandchild)</span>
+</p>
+<p>p (child)
+<span>span (grandchild)</span>
+</p>
+</div>
+
+</body>
+</html>
+
+
+
+Traversing Sideways in The DOM Tree
+There are many useful jQuery methods for traversing sideways in the DOM tree:
+
+==================
+•	siblings()
+•	next()
+•	nextAll()
+•	nextUntil()
+•	prev()
+•	prevAll()
+•	prevUntil()
+
+
+
+

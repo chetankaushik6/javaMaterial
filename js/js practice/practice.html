@@ -1,0 +1,75 @@
+<!--THIS IS CALCULATOR -->
+
+
+<!DOCTYPE html>
+    <html>
+	    <head>
+		
+		<style>
+		   input[type="text"]{
+		      width:40px ;
+			  height:40px ;
+			  font-size:23px;
+			  border:2px solid black;
+			  text-align:center;
+		   
+		   }
+		</style>
+		
+		<title>
+		    java script tutorial
+		</title>
+		
+		    <meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width,initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    
+	       <script>
+		   function sum(){
+		      var a=parseInt(t1.value);
+               var b=parseInt(t2.value);
+                 var c=a+b;
+
+                t3.value=c;				 
+			  }
+			  
+			  function sub(){
+			    var a=parseInt(t1.value);
+				var b=parseInt(t2.value);
+				 var c=a-b;
+				 
+				 t3.value=c;
+			  }
+			  
+			  function mul(){
+			     var a=parseInt(t1.value);
+				 var b=parseInt(t2.value);
+				 c=a*b
+				 
+				 t3.value=c;
+			  }
+			  
+			  function div(){
+			     var a=parseInt(t1.value);
+				 var b=parseInt(t2.value);
+				 c=a/b;
+				 
+				 t3.value=c;
+			  }
+		   </script>
+           
+		</head>
+		
+		<body>
+		   First:<input type="text" id="t1"><br>
+		   Second:<input type="text" id="t2"><br>
+		   RESULT<input type="text" id="t3" readonly><br>
+		   <br>
+		   <input type="button" value="add" onclick="sum()">
+		   <br><input type="button" value="sub" onclick="sub()"><br>
+		   <input type="button" value="mul" onclick="mul()">
+		   <br><input type="button" value="devide" onclick="div()">
+			
+			
+		</body>
+	</html> 

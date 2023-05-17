@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+    <html>
+	    <head>
+            <meta charset="UTF-8">		
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+			<meta name="viewport" content="width=device-width,initial-scale=1.0">
+			
+		<title>
+			     jQuery tutorial 
+			</title>
+			
+		</head>
+		
+		<body>
+		     <p>this is my body1</p>
+			 <p class="oye">this is my body2</p>
+			 <p id="hello">this is my body3</p>
+			 <p>this is my body4</p>
+			 <br>
+			      <div id='wiki'>
+				  Located in Wheaton, Illinois, Saint Francis High School is a private roman catholic college preparatory school, cultivating faith and character development.
+‎Visit St. Francis High School · ‎Only at SFHS · ‎Sports at SFHS · ‎Calendar
+Located in Wheaton, Illinois, Saint Francis High School is a private roman catholic college preparatory school, cultivating faith and character development.
+‎Visit St. Francis High School · ‎Only at SFHS · ‎Sports at SFHS · ‎Calendar
+
+				  </div>
+			 <br>
+			 <img src="user.png" width="200px" class="ima">
+			 <button style="padding:7px; font-size:21px;">okk</button>
+			 <button style="padding:7px; font-size:21px;" id="button2">html</button>
+		</body>
+		
+	<!-- 	<script src="jquery-3.6.1.min.js"></script>   -->
+		
+		<script
+  src="https://code.jquery.com/jquery-3.6.1.min.js"
+  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+  crossorigin="anonymous"></script>
+  
+  
+		<script>
+		
+        jQuery(document).ready(function(){		
+		      $(".oye").click(function(){
+			       $("#hello").hide(2000);
+			  });
+			  
+			  
+			  $("p#hello").click(function(){
+			        jQuery(this).css("font-size","21px");
+					jQuery(this).css("color","blue");
+			  });
+			  
+			  
+			  
+			  jQuery("button").mouseenter(function(){
+			        jQuery("p").css("font-size","26px");
+					jQuery("p").css("background-color","black");
+					jQuery("p").css("color","white");
+					jQuery("p").css("border-radius","30px");
+					jQuery("p").css("padding-left","200px");
+			  });
+		     //console.log($);
+		
+		 $("#button2").mouseleave(function(){
+			        jQuery("p").html("hey who are<u>you</u>");
+					
+			  });
+			  
+
+
+
+            //demoing the on method :
+			jQuery('p').on({
+			
+			click: function(){
+			     console.log("thanks for clicking ",this);
+			}
+			,
+			mouseleave: function(){
+			     console.log("mouse leave");
+			}
+			
+			
+		});
+
+             $(".ima").dblclick(function(){
+			   //  $("p").toggle(2000);
+				// $("#wiki").toggle(1000);
+				  //$("button").toggle(2000);
+				 
+				  $("p").slideUp(1000);
+				 $("#wiki").slideDown(1000);
+				  //$("button").toggle(2000);
+				 
+				 // $(this).toggle(1000);
+			});   
+
+       /* $("p").click();
+				$("p").click(function(){
+				   //   console.log("you clicked on 'p'");
+				        //jQuery('p').hide();
+						jQuery(this).hide();
+				});
+		*/	});	
+		</script>
+	</html>

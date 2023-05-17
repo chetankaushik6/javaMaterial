@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+    <html>
+	    <head>
+	        <title>dimension function in jQuery</title>
+                <script src="jq.js"></script>
+                 <script>
+				      jQuery(document).ready(function(){
+					        jQuery("#dim").click(function(){
+							      var a=jQuery("div").height();
+								  var b=jQuery("div").innerHeight();
+								  var c=jQuery("div").outerHeight();
+								 
+								 alert("height is " + a);
+								  alert("innerHeight is " + b);
+								  alert("outer height is " + c);
+							});
+					  });
+				 </script>				
+		</head>
+		  <body>
+		       <div style="color:blue; background-color:khaki; font-size:21px; padding:10px; 
+			   border:2px solid black;">
+			     <h1>tell me about your self </h1>
+				 <p>i am a good guy.i reside mathura.i like to see dreams 
+				     with open eyes..............<br>
+					 i love to play ludo,cards and free-fire......
+				 </p>
+			</div>
+			
+			<input type="button" id="dim" value="show" style="padding:10px; font-size:20px;
+			 margin-top:10px ;">
+		  </body>
+	</html>

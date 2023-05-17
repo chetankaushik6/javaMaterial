@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+    <html>
+	    <head>
+		   <title>toggle in jQuery</title>
+		   
+		   <script src="jq.js"></script>
+		   <script>
+		         jQuery(document).ready(function(){
+				        jQuery("#me").click(function(){
+						   // jQuery("p").slideDown(3000);
+							
+							// jQuery("p").slideUp(3000);
+							 jQuery("p").slideToggle(3000);
+						});
+				 });
+		   </script>
+		</head>
+		
+		<body>
+		      <p>this is paragraph this is paragraphthis is paragraphthis is paragraph
+			  this is paragraphthis is paragraphthis is paragraphthis is paragraph
+			  this is paragraphthis is paragraphthis is paragraphthis is paragraph
+			  this is paragraphthis is paragraphthis is paragraphthis is paragraph
+			  this is paragraphthis is paragraphthis is paragraphthis is paragraph
+			  </p>
+			  
+			  <input type="button" id="me" value="toggle">
+		</body>
+	</html>

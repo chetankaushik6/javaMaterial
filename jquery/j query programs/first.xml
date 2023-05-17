@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+   <!DOCTYPE note SYSTEM "first.dtd">
+
+<company>
+    <employee>
+	    <FirstName>chetan</FirstName> 
+	     <LastName>kaushik</LastName>
+		 <contact>8755855997</contact>
+		 <email>Ckaushik0385@gmail.com</email>
+		 
+		 <address>
+		      <city>mathura</city>
+			  <state>uttar pradesh</state>
+			  <zip>281502</zip>
+		 </address>
+	</employee>
+	
+</company>

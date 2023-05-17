@@ -1,0 +1,355 @@
+<head>
+<script>
+var a=1;
+function show()
+{
+a++;
+if(a>4)
+{
+alert("No More Images");
+return;
+}
+else if(a==1)
+m.src="a.jpg";
+else if(a==2)
+m.src="b.jpg";
+else if(a==3)
+m.src="c.jpg";
+else if(a==4)
+m.src="d.jpg";
+}
+function disp()
+{
+a--;
+if(a <1)
+{
+alert("No More Images");
+return;
+}
+else if(a==1)
+m.src="a.jpg";
+else if(a==2)
+m.src="b.jpg";
+else if(a==3)
+m.src="c.jpg";
+else if(a==4)
+m.src="d.jpg";
+}
+
+</script>
+<head>
+
+<body>
+<input type="button" value="<<" onclick="disp()">
+<img src="a.jpg" height="200" width="200" id="m">
+<input type="button" value=">>" onclick="show()">
+</body>
+
+======
+JAVA				JAvaScript
+==============			============
+object oriented language		object based language
+compiled and Ineterpreted		Interpreted
+Server Side			Client Side
+support networking, file handling	No
+Java does not support nested method	Yes, it support nested method
+
+==========================================================
+How To Write JavaScript
+==================
+1) inline style
+2) inetrnal Style
+3) External Style
+===========
+inline style
+========
+JavaScript with in HTML tag without using <script> tag..
+
+
+<head></head>
+<body>
+<input type="button" value="change" onclick="alert('Hi')">
+</body>
+
+Internal Style
+=========
+JavaScript code under the <script> tag. 
+<script> tag can  be placed inside the <head> or <body> tag.
+
+All Above Example ore internal Style tag.
+=================================
+External Style
+=========
+JavaScript code in seperate file.File must save with .js Extension
+==============================================
+p.js
+===
+function disp()
+{
+alert("Hiii");
+}
+
+function disp()
+{
+document.bgColor="red";
+}
+===========================
+
+
+<head>
+<script src="p.js"></script>
+</head>
+<body>
+<input type="button" value="change" onclick="disp()">
+</body>
+=============
+
+
+
+where to place <script> tag
+====================
+<script> tag can be placed inside the <head> or <body> tag.
+=========================================
+<head>
+<script>
+function disp()
+{
+alert("Welcome to our web site ");
+}
+</script>
+</head>
+<body>
+<script>
+disp();
+</script>
+<h1>Dps </h1>
+</body>
+=========================================
+<noscript> tag:-
+===========
+To show message if browser does not support javascript.
+it must placed immediately after the closing of <script> tag
+
+<head>
+<script>
+function disp()
+{
+alert("Welcome to our web site ");
+}
+</script>
+<noscript>Plz change Browser</noscript> 
+</head>
+<body>
+<h1>Dps </h1>
+</body>
+===============================================
+keywords:- they are reserve words like if,else,for, while,do,switch,case...........etc.
+
+Tokens:-
+=======
+Smallest unit of a program.
+	1) keywords
+	2) Literals
+	3) operator
+	4) seperator
+	5) Identifier
+
+Literals :- Literals are constant.
+  10   // integer constant
+   10.5 // floating constant
+ "Ram"  // String Constant
+true     // boolean constant
+======================
+identifier :- Programmer define words like variable namd, function name..... etc.
+Seperator:-
+======
+[]   :- Array Declaration
+()  :- Function declaration, TypeCasting
+{ } :- To define a block
+;   :- Terminator or end of Line
+, :- To seperate Multiple declaration
+. :- To access class member
+: :- To define a label.
+====================
+Note:-
+=====
+Semicolon is optional in javascript.
+
+Operator:-
+======
+Perform operation on operand.
+we can categorize operator into 4 category
+1) Binary Operator
+2) BitWise operator
+3) conditional or ternary operator
+4) Unary operator
+
+Binary operator:-
+=========== Take 2 operand to perform a task.
+category of binary operator
+1) Arithmetical Operator
+2) Arithmetical Assignment Operator
+3) Comparison  Operator
+4) Logical Operator
+
+Arithmetical Operator :-
+=================== Perform simple calculation
++, -, *, /, %
+
+
+Arithmetical Assignment Operator :-
+=================== Perform simple calculation and also assign result to left operand
++=, -=, *=, /=, %=, =
+
+a=10;
+b=5;
+a=a+b; 
+or
+a+=b;
+=========================
+comparison operator:-
+==============
+compare or check relation between operand and as a result return a boolean value either true or false.
+
+>, < , >=, <=, ==, != ,===, !==
+
+a=10
+b=7
+a>b   // true
+a>=b // true
+a>b+3 // false
+a>=b+3 // true
+
+(4==4)  // true
+(4=="4") // true
+(4===4)  // true
+(4==="4") // false
+================================
+Logical Operator:
+=============
+combine two boolean expression and as a result return a boolean value either true or false.
+&&, ||, !, &, | 
+
+&&:- Return true if both expression are true.
+||:- Return true if anyone expression is true.
+!:- rReturn opposite result .
+================================
+BitWise Operator :- They work on bit.
+=====================
+&
+|
+^
+~
+<<
+>>
+
+var a=25;
+var b=13;
+var c;
+c=a&b;   // 9
+c=a|b;     // 29
+================
+                                  64   32 16 8 4 2 1
+a=25		           1   1 0 0 1  	
+b=13		           0   1 1 0 1
+================================
+a&b                                          0  1  0  01
+===============================
+a|b                                            1  1  1  0 1
+===================================
+
+Ternary  or Conditional operator (?:):- it checks a condition and execute a statement from two statement if condition is true then first statment is execute otherwise second statment is execute 
+Syntax:-
+(Condition)? Stat1 : stat2;
+
+<head>
+<script>
+function disp()
+{
+(m.src.match("a.jpg") ? m.src="b.jpg" : m.src="a.jpg";
+}
+
+</script>
+<head>
+
+<body>
+<img src="a.jpg" height="200" width="200" id="m" onclick="disp()">
+	</body>
+
+
+===========================================================
+Unary operator:-
+============
+They take one operand to perform a task.
+=============================
+++  :- increment operator
+-- :- decrement operator.
+
+1)
+
+var a=4,k;
+k=a++;
+document.write(k);  // 4
+document.write(a);  // 5
+
+2)
+var a=4,k;
+
+k=++a;
+document.write(k);  // 5
+document.write(a);  // 5
+===============================
+Variable:-
+=========
+Variable is a name or memory location where data are store.
+var keyword is used to declare variable in javascript.
+we can not mention data type at the time of variable of declaration.
+
+var a=10;   // it is a ineteger variable
+alert(typeof(a))              inetegr
+
+var a="ram";   // it is a String variable
+alert(typeof(a))              String
+=================================
+Note :- typeof():- it is used to display the type of varaible.
+ 
+
+Decision Making Construct
+===================
+They are used to control the flow of program.
+1) if ...else
+2) switch ....case
+=======================================
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+

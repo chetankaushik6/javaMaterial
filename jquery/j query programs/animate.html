@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+    <html>
+	    <head>
+		     <script src="jq.js"></script>
+			 <script>
+			         $(document).ready(function(){
+					       $("button").click(function(){
+						         $("div").animate({
+								      left:'250px',
+									  opacity:'0.5',
+									  height:'150px',
+									  width:'150px'
+									 // border-radius:'50px'
+								 });
+						   });
+					 });
+			 </script>
+		</head>
+		
+		<body>
+		     <button>start animation</button>
+			 
+			 <div style="background-color:black;  color:white;
+			     height:100px; position:absolute; border-radius:100px;
+			 "></div>
+		</body>
+	</html>

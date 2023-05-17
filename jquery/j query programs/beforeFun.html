@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+    <html>
+	    <head> 
+		    <title>before function of jQuery</title>
+			      <script src="jq.js"></script>
+				  
+				   <script>
+				        jQuery(document).ready(function(){
+						     jQuery("#btn").click(function(){
+							    
+//this thing is occuring problem here 
+					//		-->	jQuery("p").before("<img src="img2.jpg" height="40px"  width"50px"=>");
+							 });
+						});
+				   </script>
+			</head>
+		
+		<body>
+		     <p style="font-size:21px ; color:teal;">this is my paragraph which is less in words ............comparison
+			 other.paragraph   his is my paragraph which is less in words ............comparison
+			 other.paragraph</p>
+			 
+			 <input type="button" id="btn" value="before" style="padding:8px; font-size:25px;">
+		</body>
+	</html>

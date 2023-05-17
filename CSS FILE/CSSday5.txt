@@ -1,0 +1,237 @@
+new color way
+============
+CSS3 provide 3 new ways to provide color value.
+1) hsl (Hue Saturation Lightness)
+2) hsla(Hue Saturation Lightness Accuracy)
+3) rgba (Red green blue accuracy)
+older 3 ways are
+1) rgb
+2) color name
+3) hexadecimal code
+
+h1
+{
+background-color:pink;
+or
+background-color:#ff0000;
+or
+background-color:rgb(200,40,40);
+or
+background-color:rgba(200,40,40,0.6);
+or
+or
+background-color:hsl(120,70%,80%);
+or
+background-color:hsla(120,70%,80%,0.8);
+}
+
+
+====================================
+user interface in CSS3
+================
+CSS3 provide resize property for user interface.
+Example of resize property
+====================
+<html>
+<head>
+<style>
+div.a
+{
+resize:both;
+overflow:auto;
+}
+
+</style>
+</head>
+<body>
+
+<div class="a">
+This is a para here This is a para here This is a para here This is a para here This is a para here  This is a para here This is a para here This is a para here This is a para here This is a para here This is a para here This is a para here This is a para here This is a para here This is a para here This is a para here This is a para here This is a para here This is a para here This is a para here This is a para here 
+</div> 
+
+
+<button>Click Me</button>
+</body>
+</html>
+
+
+background property in cSS3
+=============================
+background-size
+background-clip
+background-origin
+
+Example of background-clip property
+==========================
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div.a
+{
+background-color:orange;
+border:12px dotted red;
+background-orgin:content-box;
+}
+
+</style>
+</head>
+<body>
+
+<div class="a">
+This is a para here This is a para here This is a para here This is a para here This is a para here  This is a para here This is a para here This is a para here This is a para here This is a para here This is a para here This is a para here This is a para here This is a para here This is a para here This is a para here This is a para here This is a para here This is a para here This is a para here This is a para here 
+</div> 
+
+
+<button>Click Me</button>
+</body>
+</html>
+
+Example of 
+background-origin and background-size property
+================================
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div.a
+{
+border:10px solid red;
+background-image:url(b.jpg);
+height:300px;
+width:400px;
+background-repeat:no-repeat;
+padding:40px;
+background-origin:content-box;
+background-size:200px 300px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="a">
+This is a para here This is a para here This is a para here This is a para here This is a para here  This is a para here This is a para here This is a para here This is a para here This is a para here This is a para here This is a para here This is a para here This is a para here This is a para here This is a para here This is a para here This is a para here This is a para here This is a para here This is a para here 
+</div> 
+
+
+<button>Click Me</button>
+</body>
+</html>
+
+==========================
+cursor property of CSS3
+====================
+it is used to apply cursor style
+
+cursor:auto;
+===============================
+
+
+<html>
+   <head>
+   </head>
+   
+   <body>
+
+      <p>Move the mouse over the words to see the cursor change:</p>
+      
+      <div style="cursor:auto">Auto</div>
+      <div style="cursor:crosshair">Crosshair</div>
+      <div style="cursor:default">Default</div>
+      <div style="cursor:pointer">Pointer</div>
+      <div style="cursor:move">Move</div>
+      <div style="cursor:e-resize">e-resize</div>
+      <div style="cursor:ne-resize">ne-resize</div>
+      <div style="cursor:nw-resize">nw-resize</div>
+      <div style="cursor:n-resize">n-resize</div>
+      <div style="cursor:se-resize">se-resize</div>
+      <div style="cursor:sw-resize">sw-resize</div>
+      <div style="cursor:s-resize">s-resize</div>
+      <div style="cursor:w-resize">w-resize</div>
+      <div style="cursor:text">text</div>
+      <div style="cursor:wait">wait</div>
+      <div style="cursor:help">help</div>
+   </body>
+   
+</html> 
+====================================
+float property in CSS
+=================
+it is used to float an element from next element.
+
+<head>
+<style>
+#a
+{
+float:left;
+width:260px;
+}
+</style>
+
+</head>
+<body>
+<div id="a">
+<img  src="b.jpg" height="200" width="200">
+</div>
+<p>Long para here  Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para
+</p>
+</body>
+=================================================
+z-index
+======
+he z-index property specifies the stack order of an element.
+
+An element with greater stack order is always in front of an element with a lower stack order.
+z-index property works on positions element.
+
+
+<head>
+<style>
+img
+{
+position:absolute;
+z-index:-1;
+}
+</style>
+
+
+</head>
+<body>
+
+<img  src="b.jpg" height="200" width="200">
+<p>Long para here  Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here  Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here  Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here  Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here  Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here  Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here  Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here  Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here  Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here  Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here  Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here Long para here 
+</p>
+</body> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

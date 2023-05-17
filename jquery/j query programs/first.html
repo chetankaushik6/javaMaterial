@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+    <html>
+	     <head>
+		     <title>first program of jQuery</title>
+			 
+			 <script
+  src="https://code.jquery.com/jquery-3.6.1.min.js"
+  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+  crossorigin="anonymous"></script>
+			 
+			  <script>
+		      $(document).ready(function(){
+			      $("#b1").click(function(){
+				       $("p").hide(3000);
+				  })
+				  
+				  $("#b2").click(function(){
+				       $("p").show(3000);
+				  })
+				  
+			       jQuery("#sub").click(function(){
+				       $("h1").hide(5000);
+				   })	  
+				   
+				   jQuery("#b2").click(function(){
+				        $("h1").show(4000);
+				   })
+			  });
+		 </script>
+			 
+			 
+		 </head>
+		 
+		 <body>
+		 
+		      <h1>hello everyOne .follow me </h1>
+		 
+	           <p>this is paragraph.this is paragraph
+this is paragraph.this is paragraph this is paragraph.this is paragraph 
+this is paragraph.this is paragraph this is paragraph.this is paragraph 
+this is paragraph.this is paragraph th
+is is paragraph.this is paragrap
+h this is paragraph.this is paragraph 			   </p>	 
+
+
+             <input type="button" id="b1" value="hide">
+			 <input type="button" id="b2" value="show">
+			 
+              <input type="button" id="sub" value="submit">
+		 </body>
+		 
+		
+	</html>

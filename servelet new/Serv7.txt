@@ -1,0 +1,271 @@
+JDBC API(Java Database connectivity)
+=====================================
+JDBC API contain have predefine classes or interface using them a Java Programmer can connect their java Application to any RDBMS.
+JDBC API  is an application or RDBMS independent.
+java.sql package contain classes for JDBC API.
+Classes for JDBC API
+====================================================
+Driver
+DriverManager
+--------------------------
+Interface of JDBC API
+=====================
+1) Connection
+2) PreparedStatement
+3) Statement
+4) CallableStatement
+5) ResultSet
+==========================================================
+
+Steps to Connect Java Application to RDBMS
+=============================================
+1) Register Driver
+2) Create connection
+3) Create Query
+4) Extract Result
+5) close conennection
+====================================
+
+Register Driver
+=================
+java.lang package contain  a class whose name is "Class".
+forName() method of "Class" class is used to register driver.
+
+EXample to Connect Mysql Driver
+=========
+Class.forName("com.mysql.jdbc.Driver");
+
+EXample to Connect Oracle Driver
+=========
+Class.forName("oracle.jdbc.driver.OracleDriver");
+
+EXample to Connect MSACCESS
+==========================
+Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+==========================================================
+Create Connection
+==================
+getConnection() method of DriverManager class return the object Connection interface
+Example
+======
+Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/databasename","username","password");
+
+Create Query
+===================
+Example
+PreparedStatement pst =con.prepareStatement("query");
+
+Close Connection
+=================
+con.close()
+====================================================================
+
+
+To connect java Web App to Database
+===================================
+RDBMS :- Mysql
+Database Name:- Orga
+Table Name:- applicant
+FieldName:- name,pwd,email,gen,lang1,lang2,city,cmt
+Primary Key :- Email
+===================================================
+To Create database
+==================
+create database Orga;
+
+To Select Database 
+=================
+use orga;
+
+To create Table
+===============
+create table applicant
+(
+name varchar(30),
+pwd varchar(30),
+email varchar(30)primary key,
+gen varchar(30),
+Lang1 varchar(30),
+Lang2 varchar(30),
+City varchar(30),
+cmt varchar(30)
+);
+
+==========================
+Open netbeans and take new WebApplication
+
+1)Reg.html(User Interface where user enter detail)
+2)Register.java (Take data from request and save in database)
+3)web.xml(Servlet entry)
+4) Wel.html(Open if User Successfully Regisetr)
+
+To Add MySql Driver In Project
+==============================
+1) Right click on Libraries folder of your project
+2) click on Add Library
+3) Select MySql JDBC driver
+4) click on Add Button
+
+=================================================
+
+To make Connection
+==============================
+1) click on Service tab
+2) expand the databases
+3) expand the drivers
+4) right click on mysql connect JDriver
+5) click on Connect Using
+6) Type Database name
+7) click on Test Connection
+8) click on Finish Button
+
+
+========
+Reg.html
+=========
+<body>
+<form action="Register" method="post">
+<fieldset>
+<legend align="left">RegForm</legend>
+<table>
+<tr><td>Name</td>
+<td><input type="text" placeholder="Enter Name Here" required="required" name="N1"></td></tr>
+
+<tr><td>Password</td>
+<td><input type="password"  placeholder="Enter password Here" required="required" name="P1" ></td></tr>
+
+<tr><td>RePassword</td>
+<td><input type="password"  placeholder="Enter Repassword Here" required="required" name="P2" ></td></tr>
+
+
+<tr><td>Email</td>
+<td><input type="email"  placeholder="Enter Email Here" required="required" name="E1" ></td></tr>
+
+<tr><td>Gender</td>
+<td><input type="radio" name="R1" checked value="male" >Male
+<input type="radio" name="R1" value="Female" >FeMale
+</td></tr>
+
+<tr><td>Language</td>
+<td><input type="checkbox" checked name="C1" value="Hindi" >Hindi
+<input type="checkbox" name="C2" value="English" >English
+</td></tr>
+<tr><td>City</td>
+<td><select name="S1">
+<option value="Agra">Agra</option>
+<option value="Kota">Kota</option>
+<option value="mathura">Mathura</option>
+</select>
+</td>
+</tr>
+<tr>
+<tr>
+<td>Comment</td>
+<td><textarea rows="7" cols="20" name="CM"></textarea>
+</td>
+</tr>
+
+<tr>
+<td><input type="submit"  value="RegisterNow"></td>
+<td><input type="reset" value="Referesh" ></td></tr>
+</table>
+</fieldset>
+<form>
+
+============================================
+Register.java
+==============
+import javax.servlet.http.*;
+import javax.servlet.*;
+import java.io.*;
+import java.sql.*;
+public class Register extends HttpServlet
+{
+public void doPost(HttpServletRequest req,HttpServletResponse res)
+{
+try
+{
+res.setContentType("text/html");
+String a=req.getParameter("N1");
+String b=req.getParameter("P1");
+String c=req.getParameter("E1");
+String d=req.getParameter("R1");
+String e=req.getParameter("C1");
+String f=req.getParameter("C2");
+String g=req.getParameter("S1");
+String h=req.getParameter("CM");
+
+PrintWriter pw=res.getWriter();
+
+Class.forName("com.mysql.jdbc.Driver");
+
+Connection con =DriverManager.getConnection("jdbc:mysql://localhost:3306/orga","root","");
+
+PreparedStatement pst=con.prepareStatement("insert into applicant values(?,?,?,?,?,?,?,?)");
+
+pst.setString(1,a);
+pst.setString(2,b);
+pst.setString(3,c);
+pst.setString(4,d);
+pst.setString(5,e);
+pst.setString(6,f);
+pst.setString(7,g);
+pst.setString(8,h);
+
+int u=pst.executeUpdate();
+
+if(u>0)
+res.sendRedirect("Wel.html");
+
+
+}
+catch(Exception ett)
+{
+try
+{
+PrintWriter out=res.getWriter();
+
+out.print(ett);
+}
+catch(Exception et)
+{
+
+}
+}
+}
+}
+
+web.xml
+=======
+<web-app>
+<servlet>
+<servlet-name>Register</servlet-name>
+<servlet-class>Register</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>Register</servlet-name>
+<url-pattern>/Register</url-pattern>
+</servlet-mapping>
+</servlet>
+</web-app>
+
+Wel.html
+=========
+<body>
+<h2> You are Successfully Register</h2>
+</body>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+

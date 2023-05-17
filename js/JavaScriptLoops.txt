@@ -1,0 +1,223 @@
+Loop:
+====
+When we want to execute similar or logically simuilar statements at a number of times then we use loop.
+There are 4 Loops present in java script
+1) for loop
+2) while loop
+3) do...while loop
+4) for ......... in Loop
+=================
+For Loop
+=======
+it is used to fixed iteration.
+synatx
+====
+for(initial;condition;updation)
+stat;
+
+or
+for(initial;condition;updation)
+{
+stat1;
+stat2;
+-
+-
+statn;
+}
+==================================================
+WAP that display first 100 natural no
+===========================
+<head>
+<script>
+function disp()
+{
+for(i=1;i<=100;i++)
+alert(i);
+}
+</script>
+</head>
+<body>
+<script>
+disp();
+</script>
+</body>
+============================================================
+ while loop
+========
+Basically it is used when terms are unknown . It is also called entry controlled loop.
+
+syntax
+=====
+while(condition)
+{
+stat1;
+stat2;
+-
+-
+statn;
+updation;
+}
+
+
+
+WAP that display first 10 natural no
+===========================
+<head>
+<script>
+function disp()
+{
+var i=1;
+while(i<=10)
+{
+alert(i)
+i++;
+}
+}
+</script>
+</head>
+<body>
+<script>
+disp();
+</script>
+</body>
+==========================
+do.... ..while loop
+========
+it execute atleast one time without checking the condition.
+
+syntax
+=====
+do
+{
+stat1;
+stat2;
+-
+-
+statn;
+updation;
+}
+while(condition);
+
+WAP that display first 10 natural no
+===========================
+<head>
+<script>
+function disp()
+{
+var i=1;
+do
+{
+alert(i)
+i++;
+}
+while(i<=10);
+}
+</script>
+</head>
+<body>
+<script>
+disp();
+</script>
+</body>
+=======================
+for .......in:
+=======
+It is used to traverse an array.
+var a =new Array(4,3,8,9,3)
+for(var b in a)
+alert(b)
+==============================================
+===============================================
+Dialog box in javaScript
+====================
+there are 3 dialog box in javascript
+1) alert():- To show warning or notification to user
+2) confirm():- To take confirmation to user
+3) prompt():- To take input from user.
+===========================================================
+
+ <head>
+<script>
+function disp()
+{
+var p=prompt("Enter Age");
+if(p>=18)
+{
+var a=confirm("Really do you want to move ............")
+if(a==true)
+window.location="http://www.facebook.com";
+else
+alert("Okk Stay on same page")
+}
+else
+alert("You are Too Small");
+}
+</script>
+</head>
+<body>
+<p>This is a para ......... .............. .... This is a para ......... .............. ....
+</p>
+<input type="button" value="MoveToFB" onclick="disp()">
+</body>
+===========================================
+String:-
+======
+A string is a sequence or collection of characters like "Ram","10/A","Holigate".....etc.
+string must enclose in double quotes.
+But in JAvaScript , String is a class.
+There are two ways to declare String
+==========================
+1) Primitive way
+=============
+ var a ="RAHUL"
+
+2) object way
+=============
+var a = new String("RAHUL")
+
+Note:-
+=====
+primitive way automatically converted into object way.
+======================================
+String method in JavaScript
+====================
+toUpperCase()
+toLowerCase()
+indexOf()
+lastIndexOf()
+charAt()
+codeCharAt()
+match()
+substr()
+substring()
+split()
+=====================
+var a ="Rahul";
+
+a.toUpperCase();                 // RAHUL
+a.toLowerCase();                 // rahul
+==================================
+var a ="CALIFORNIA";
+a.indexOf('I')  // 3
+a.lastIndexOf('I')  // 8
+=======
+var a ="ram is a good boy";
+var b=a.split(" ");
+alert(b[0]) ;    // ram
+alert(b[1]) ;    // is
+alert(b[2]) ;    // a
+
+var c =a.charAt(1)   ;   //a
+var c =a.charCodeAt(1)   ;   //97
+
+
+
+
+
+
+
+
+
+
+
+

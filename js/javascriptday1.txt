@@ -1,0 +1,123 @@
+JavaScript
+========
+JavaScript is an object based, client side scripting,interpreted language.
+it is used to provide dynamic look to static web page of HTML.
+Javascript is developed by netscape incorporation in 1995 initially called LiveScript.
+other scripting language is VBScript.
+VBscript runs only on internet explorer whereas JavaScript runs on almost all  browser.
+
+Features of JavaScript:
+=================
+1) Immediate feedback to visitor
+2) Less server Inetraction.
+3) richer interface
+4) increased user interaction.
+
+Limitation of javascript
+===================
+No, file handling
+no, multitreading
+no, Networking
+
+==================
+Example 1:
+========
+To swap images 
+==========
+
+<head>
+<script>
+function disp()
+{
+if(m.src.match("a.jpg"))
+m.src="b.jfif";
+else
+m.src="a.jpg";
+
+}
+
+</script>
+</head>
+<body>
+<img src="a.jpg" height="200"width="200" id="m" onclick="disp()">
+</body>
+===================
+
+Example2:
+=========
+Zoom in / Zoom out
+===============
+<head>
+<script>
+function disp()
+{
+m.height="400";
+m.width="400";
+}
+function show()
+{
+m.height="200";
+m.width="200";
+}
+</script>
+</head>
+<body>
+<img src="test2.png" height="200"width="200" id="m" onmouseover="disp()" onmouseout="show()">
+</body>
+
+Example 3
+============
+To change cSS at runtime
+===================
+<head>
+<script>
+function disp()
+{
+d.style.color="red";
+d.style.backgroundColor="yellow";
+}
+</script>
+</head>
+<body>
+<p id="d">this is a para here this is a para here this is a para here this is a para here this is a para here 
+</p>
+<input type="button" value="Theme" onclick="disp()">
+</body>
+===============
+To change content 
+================
+
+<head>
+<script>
+function disp()
+{
+d.innerHTML="New content here ";
+}
+</script>
+</head>
+<body>
+<p id="d" onclick="disp()">this is a para here this is a para here this is a para here this is a para here this is a para here 
+</p>
+<input type="button" value="change" onclick="disp()">
+</body>
+==================================================
+Example 5:
+========
+<head>
+<script>
+var a=1;
+function disp()
+{
+a++;
+if(a%2==0)
+d.innerHTML="New content here ";
+else
+d.innerHTML="this is a para here this is a para here this is a para here this is a para here this is a para here ";
+}
+</script>
+</head>
+<body>
+<p id="d" onclick="disp()">this is a para here this is a para here this is a para here this is a para here this is a para here 
+</p>
+<input type="button" value="change" onclick="disp()">
+</body>

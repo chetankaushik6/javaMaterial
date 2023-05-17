@@ -1,0 +1,6 @@
+
+ArrayList<String> person=new ArrayList<String>();
+
+ person.add('chetan');
+ person.add('kaushik');
+ person.add('mca');

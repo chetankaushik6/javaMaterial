@@ -1,0 +1,55 @@
+First Example of Servlet
+------------------------------
+Reg.html(User interface where user entered detail)
+Register.java(Servlet:- fetch data from request and store in database and send response to client)
+web.xml(deployment descriptor)
+=========================================================
+Reg.html
+-----------
+<body>
+<form action="Register" method="post">
+Name<input type="text" name="t1"><br>
+Email<input type="text" name="e1"><br>
+Name<input type="password" name="p1"><br>
+</form>
+</body>
+=====================================
+Register.java(Servlet)
+-----------------------
+import javax.servlet.http.*;
+import java.io.*;
+public class Register extends HttpServlet
+{
+
+public void doPost(HttpServletRequest req,HttpServletResponse res)
+{
+res.setContentType("text/html");
+String a= req.getParameter("t1");
+String b= req.getParameter("e1");
+String c= req.getParameter("p1");
+// database connectivity
+PrintWriter pw=res.getWriter();
+pw.print("You are Register ......");
+
+}
+}
+=============================
+web.xml(deployement descriptor)
+--------------------------------------------
+<web-app>
+<servlet>
+<servlet-name>A</servlet-name>
+<servlet-class>Register</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>A</servlet-name>
+<url-pattern>/Register</url-pattern>
+</servlet-mapping>
+</web-app>
+==============================
+Error code
+
+404:-  Resource Not found on server
+405:-  Request Method mismatch
+500:- Servlet instance is not created 
+----------------------------------------------------------=============================

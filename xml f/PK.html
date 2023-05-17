@@ -1,0 +1,42 @@
+To Fetch Data From cd_catalog.xml file and show in webpage.
+===========================================
+<head>
+<script>
+function disp() 
+{
+  var req = new XMLHttpRequest();
+  req.open("GET", "cd_catalog.xml", true);
+  req.send();
+  req.onreadystatechange = function() 
+  {
+    if (req.readyState == 4) 
+    {
+ var doc = req.responseXML;
+    var x = doc.getElementsByTagName("CD");
+  var table="<tr><th>Artist</th><th>Title</th><th>Price</th></tr>";
+var i;
+ for (i = 0; i <x.length; i++) 
+  { 
+    table += "<tr><td>" +
+    x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+    "</td><td>"+x[i].getElementsByTagName("PRICE")[0].childNodes[0].nodeValue +"</td></tr>"
+;
+  }
+  document.getElementById("d").innerHTML = table;  
+ 
+     }
+  }
+  
+}
+
+</script>
+</head>
+<body>
+<h1>Data Here </h1>
+<button type="button" onclick="disp()">Fetch Data</button>
+<br><br>
+<table border="1" id="d"></table>
+</body>
+</html>

@@ -1,0 +1,116 @@
+Event in JQuery
+==============
+JQuery interact with HTML document by using event.
+Jquery support various events like:-
+
+ready
+click
+dblclick
+blur
+focus
+mouseover
+mouseout
+submit
+reset
+keyup
+keydown
+
+Example of blur and focus event
+======================
+<head>
+<script src="jq.js">
+</script>
+<script>
+$(document).ready(function()
+{
+$("input").focus(function()
+{
+$(this).css("color","red");
+$(this).css("background-color","silver");
+$(this).css("font-size","18px");
+
+});
+$("input").blur(function()
+{
+$(this).css("color","black");
+$(this).css("background-color","white");
+$(this).css("font-size","16px");
+
+});
+});
+</script>
+
+</head>
+<body>
+Name <input type="text" name="t1"><br>
+Email <input type="text" name="t1"><br>
+Password <input type="text" name="t1"><br>
+
+ ======================================
+Method chaining in JQuery
+======================
+f
+
+ 
+===============================================
+function callback example in Jquery
+===========================
+<head>
+<script src="jq.js">
+</script>
+<script>
+$(document).ready(function()
+{
+$("#b1").click(function()
+{
+$("p").hide(3000,function()
+{
+alert("Para is Hidden");
+});
+});
+
+});
+</script>
+
+</head>
+<body>
+<p> This is a  this is a This is a  this is a This is a  this is a This is a  this is a This is a  this is a This is a  this is a This is a  this is a This is a  this is a This is a  this is a This is a  this is a This is a  this is a This is a  this is a This is a  this is a This is a  this is a This is a  this is a This is a  this is a 
+</p>
+<input type="button" id="b1" value="Hide">
+===============================================================
+Function in Jquery
+==============
+hide() :- To hide an element.
+synatx
+=====
+$("p").hide();
+or
+$("p").hide("slow");
+or
+$("p").hide("fast");
+or
+$("p").hide(7000);
+or
+$("p").hide(3000,functioncallback);
+
+2) show():- To show hidden element.
+ 
+3) toggle():- To do alternate work.
+
+$("p").toggle(3000);
+===============================
+sliding Function in Jquery
+====================
+slideUp()
+slideDown()
+slideToggle()
+
+fadding Function in Jquery
+===================
+fadeIn()
+fadeOut()
+fadeToggle()
+fadeTo()
+
+$("p").fadeOut(3000);
+==========================
